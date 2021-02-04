@@ -21,3 +21,10 @@ Route::get('/blank-hotelin', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/edit/profile', function () {
+    return view('projek_akhir.user-profile');
+});
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

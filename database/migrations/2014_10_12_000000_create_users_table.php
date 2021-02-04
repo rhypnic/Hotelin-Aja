@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->integer('no_hp');
             $table->enum('role', ['penyedia', 'penginap']);
             $table->rememberToken();
+            
             $table->timestamps();
         });
     }
