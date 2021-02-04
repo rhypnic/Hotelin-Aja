@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/blank-hotelin', function () {
+    return view('projek_akhir.blank');
+});
