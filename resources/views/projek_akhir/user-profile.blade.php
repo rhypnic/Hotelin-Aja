@@ -1,7 +1,7 @@
 @extends('projek_akhir.blank')
 
-@section('header')
-<h1> My Profile </h1>
+@section('header-content')
+<h1> Edit My Profile </h1>
 @endsection
 @section('sidebar-tools')
 <li><a class="nav-link" href="#">my transaction</a></li>
@@ -9,7 +9,7 @@
 @section('content')
 <form method="post" class="needs-validation" novalidate="">
                     <div class="card-header">
-                      <h4>Edit Profile</h4>
+                      <h4> Profile</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">                               
