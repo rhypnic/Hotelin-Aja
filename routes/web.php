@@ -21,3 +21,6 @@ Route::get('/blank-hotelin', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', function () {
+    return view('projek_akhir.user-profile');
+});

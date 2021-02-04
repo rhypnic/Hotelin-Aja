@@ -19,6 +19,7 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
           <ul class="dropdown-menu">
+            
             <li><a href="auth-register.html">profiles</a></li>
             <li><a href="auth-register.html">Register new Account</a></li>
             
@@ -27,11 +28,11 @@
         
         
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i> <span>Utilities</span></a>
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i> <span>Tools</span></a>
           <ul class="dropdown-menu">
             <li><a href="utilities-contact.html">Contact</a></li>
             <li><a class="nav-link" href="utilities-invoice.html">Invoice</a></li>
-            
+            @yield('sidebar-tools')
           </ul>
         </li>
         
