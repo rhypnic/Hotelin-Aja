@@ -13,32 +13,28 @@
 @endsection
 
 @section('content')
-<form method="post" class="needs-validation" novalidate="">
+<form method="get" action="/show/profile" class="needs-validation" novalidate="">
     @csrf
                     <div class="card-header">
                       <h4> Profile</h4>
+                     
+                      
                     </div>
                     <div class="card-body">
                         <div class="row">                               
                           <div class="form-group col-md-6 col-12">
-                            <label>First Name</label>
-                            <input type="text" class="form-control" value="Ujang" required="">
+                            <label>Name</label>
+                            <input type="text" class="form-control" value="Ujang" name="nama" required="">
                             <div class="invalid-feedback">
                               Please fill in the first name
                             </div>
                           </div>
-                          <div class="form-group col-md-6 col-12">
-                            <label>Last Name</label>
-                            <input type="text" class="form-control" value="Maman" required="">
-                            <div class="invalid-feedback">
-                              Please fill in the last name
-                            </div>
-                          </div>
+                        
                         </div>
                         <div class="row">
                           <div class="form-group col-md-7 col-12">
                             <label>Email</label>
-                            <input type="email" class="form-control" value="ujang@maman.com" required="">
+                            <input type="email" class="form-control" value="ujang@maman.com" required="" disabled>
                             <div class="invalid-feedback">
                               Please fill in the email
                             </div>
@@ -58,12 +54,22 @@
                         </div>
                         
                     </div>
-                    <div class="card-footer text-right">
+                    <div class="d-flex justify-content-between">
+                     
+                      
+                      <form action="#" method="post">
+                        @csrf
+                        @method('DELETE')
+                       <input type="submit" value="Delete Account" class="btn btn-danger btn-sm">
+                      </form>
                       <button class="btn btn-primary">Save Changes</button>
                     </div>
+                     
+                        
+                      
                   </form>
-
-@endsection('content')
+                  
+@endsection
 @push('scripts')
 <script>
   var editor_config = {

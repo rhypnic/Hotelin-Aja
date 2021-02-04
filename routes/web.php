@@ -28,3 +28,6 @@ Route::get('/edit/profile', function () {
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+Route::get('/show/profile', function () {
+    return view('projek_akhir.crud_profile.show-profile');
+});
