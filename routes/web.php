@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/edit/profile', function () {
-    return view('projek_akhir.user-profile');
+    return view('projek_akhir.crud_profile.edit-profile');
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
