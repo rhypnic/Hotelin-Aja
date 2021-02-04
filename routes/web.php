@@ -17,3 +17,7 @@ Route::get('/', function () {
 Route::get('/blank-hotelin', function () {
     return view('projek_akhir.blank');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
