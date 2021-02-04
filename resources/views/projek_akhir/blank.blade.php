@@ -14,6 +14,7 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('stisla/assets/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('stisla/assets/css/components.css')}}">
+  @stack('script-head')
 </head>
 
 <body>
@@ -64,5 +65,6 @@
   <script src="{{asset('stisla/assets/js/custom.js')}}"></script>
 
   <!-- Page Specific JS File -->
+  @stack('scripts')
 </body>
 </html>
