@@ -16,15 +16,14 @@
 <form method="get" action="/show/profile" class="needs-validation" novalidate="">
     @csrf
                     <div class="card-header">
-                      <h4> Profile</h4>
-                     
-                      
+                     <h4> {{Auth::user()->name}}'s Profile</h4 >
+              
                     </div>
                     <div class="card-body">
                         <div class="row">                               
                           <div class="form-group col-md-6 col-12">
-                            <label>Name</label>
-                            <input type="text" class="form-control" value="Ujang" name="nama" required="">
+                            <label>Real Name</label>
+                            <input type="text" class="form-control" value="" name="nama" required="">
                             <div class="invalid-feedback">
                               Please fill in the first name
                             </div>
@@ -34,7 +33,7 @@
                         <div class="row">
                           <div class="form-group col-md-7 col-12">
                             <label>Email</label>
-                            <input type="email" class="form-control" value="ujang@maman.com" required="" disabled>
+                            <input type="email" class="form-control" value="{{Auth::user()->email}}" required="" disabled>
                             <div class="invalid-feedback">
                               Please fill in the email
                             </div>

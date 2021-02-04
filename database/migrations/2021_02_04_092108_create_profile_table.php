@@ -18,9 +18,9 @@ class CreateProfileTable extends Migration
             $table->string('nama');
             $table->string('email')->unique();
             $table->string('photo');
-            $table->unsignedBigInteger('users_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('phone_number');
-            $table->foreign('users_id')->references('id')->on ('users');
+            $table->foreign('user_id')->references('id')->on ('users');
             $table->string('deskripsi');
             $table->timestamps();
         });

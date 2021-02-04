@@ -22,7 +22,7 @@ class ProfileController extends Controller
             "nama"=> $request["nama"],
             "phone"=> $request["phone_number"],
             "deskripsi"=> $request["deskripsi"],
-            "user_id" =>Auth::id()
+            "users_id" =>Auth::id()
         ]);
         Alert::success('Berhasil', 'Berhasil menyimpan');
 
