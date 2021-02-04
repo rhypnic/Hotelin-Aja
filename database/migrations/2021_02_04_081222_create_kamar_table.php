@@ -15,13 +15,16 @@ class CreateKamarTable extends Migration
     {
         Schema::create('kamar', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_hotel');
+            
             $table->string('nama_kamar');
             $table->integer('jumlah_kamar');
             $table->text('fasilitas');
             $table->string('gambar_kamar');
             $table->integer('harga_kamar');
             $table->timestamps();
+            $table->unsignedBigInteger('hotel_id');
+            
+            $table->foreign('hotel_id')->references('id')->on ('hotel');
         });
     }
 
