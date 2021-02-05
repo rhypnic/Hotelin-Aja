@@ -15,6 +15,10 @@
                     @endif
 
                     You are logged in!
+                    <br>
+                    <a  href="/create/profile">
+                    <button class="btn btn-primary">Create your profile</button>
+                    </a>
                 </div>
             </div>
         </div>

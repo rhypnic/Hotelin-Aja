@@ -21,8 +21,8 @@
           <a href="" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
           <ul class="dropdown-menu">
             
-            <li><a href="../../edit/profile">profiles</a></li>
-            <li><a href="../../register">logout</a></li>
+            <li><a href="../../../profile/{$profile->id}/edit">Edit Profiles</a></li>
+            <li><a href="../../../register">logout</a></li>
             
           </ul>
         </li>

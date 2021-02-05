@@ -5,10 +5,24 @@
 @endsection
 
 @section('sidebar-tools')
-<li><a class="nav-link" href="#">my transaction</a></li>
+
 @endsection
 
 @section('content')
+@if (config('sweetalert.alwaysLoadJS') === true && config('sweetalert.neverLoadJS') === false )
+    <script src="{{ $cdn ?? asset('vendor/sweetalert/sweetalert.all.js')  }}"></script>
+@endif
+@if (Session::has('alert.config'))
+    @if(config('sweetalert.animation.enable'))
+        <link rel="stylesheet" href="{{ config('sweetalert.animatecss') }}">
+    @endif
+    @if (config('sweetalert.alwaysLoadJS') === false && config('sweetalert.neverLoadJS') === false)
+        <script src="{{ $cdn ?? asset('vendor/sweetalert/sweetalert.all.js')  }}"></script>
+    @endif
+    <script>
+        Swal.fire({!! Session::pull('alert.config') !!});
+    </script>
+@endif
 <br>
 <div class="col-12 col-md-12 ">
     <div class="card profile-widget">
@@ -17,23 +31,28 @@
         <div class="profile-widget-items">
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">Role</div>
-            <div class="profile-widget-item-value"></div>
+            <div class="profile-widget-item-value">N/A</div>
           </div>
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">id</div>
-            <div class="profile-widget-item-value"></div>
+            <div class="profile-widget-item-value">{{Auth::user()->id}}</div>
           </div>
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">phone</div>
-            <div class="profile-widget-item-value"></div>
+            <div class="profile-widget-item-value">{{Auth::user()->profile->phone_number}}</div>
           </div>
         </div>
       </div>
       <div class="profile-widget-description">
-        <div class="profile-widget-name">Ujang Maman <div class="text-muted d-inline font-weight-normal"> </div></div>
-        Ujang maman is a superhero name in <b>Indonesia</b>, especially in my family. He is not a fictional character but an original hero in my family, a hero for his children and for his wife. So, I use the name as a user in this template. Not a tribute, I'm just bored with <b>'John Doe'</b>.
+        <div class="profile-widget-name"> {{Auth::user()->profile->nama}}<div class="text-muted d-inline font-weight-normal"> </div></div>
+        {{Auth::user()->profile->deskripsi}}
       </div>
       
     </div>
   </div>
+  <form action="/profile/{{Auth::user()->profile->id}}" method="post" class=text-right>
+    @csrf
+    @method('DELETE')
+   <input type="submit" value="Delete Account" class="btn btn-danger btn-sm">
+  </form>
 @endsection

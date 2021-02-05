@@ -18,7 +18,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
+    public function alamat()
+    {
+        return $this->email;
+    }
     /**
      * The attributes that should be hidden for arrays.
      *
