@@ -15,7 +15,7 @@
     @csrf
     @method('PUT')
                     <div class="card-header">
-                     <h4> {{Auth::user()->name}}'s Profile</h4 >
+                     <h4> {{Auth::user()->profile->nama}}'s Profile</h4 >
                       
                     </div>
                     <div class="card-body">

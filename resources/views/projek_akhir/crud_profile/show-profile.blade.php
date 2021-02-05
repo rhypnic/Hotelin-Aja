@@ -31,7 +31,7 @@
         <div class="profile-widget-items">
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">Role</div>
-            <div class="profile-widget-item-value">N/A</div>
+            <div class="profile-widget-item-value">{{Auth::user()->role}}</div>
           </div>
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">id</div>

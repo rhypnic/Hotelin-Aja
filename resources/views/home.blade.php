@@ -14,11 +14,20 @@
                         </div>
                     @endif
 
-                    You are logged in!
-                    <br>
-                    <a  href="/create/profile">
+                    You are logged in!<br><br>
+                    <div  class="align-self-center">
+                         <a  href="/create/profile">
                     <button class="btn btn-primary">Create your profile</button>
                     </a>
+                    <h2>     or   </h2 >
+                        <a  href="/profile">
+                        <button class="btn btn-primary">Go to site</button>
+                        </a>
+                    
+                    </div>
+                    
+                   
+                    
                 </div>
             </div>
         </div>

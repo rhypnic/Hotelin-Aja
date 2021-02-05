@@ -14,7 +14,7 @@
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
                     <div class="card-header">
-                     <h4> {{Auth::user()->name}}'s Profile</h4 >
+                     <h4> {{Auth::user()->email}}'s Profile</h4 >
                         
                     </div>
                     <div class="card-body">
