@@ -44,8 +44,8 @@
         </div>
       </div>
       <div class="profile-widget-description">
-        <div class="profile-widget-name"> {{Auth::user()->profile->nama}}<div class="text-muted d-inline font-weight-normal"> </div></div>
-        {{Auth::user()->profile->deskripsi}}
+        <div class="profile-widget-name"> {{Auth::user()->profile->nama}} / {{Auth::user()->email}}<div class="text-muted d-inline font-weight-normal"> </div></div>
+        {{Auth::user()->profile->deskripsi}} 
       </div>
       
     </div>
