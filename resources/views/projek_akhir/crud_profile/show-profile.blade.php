@@ -49,10 +49,11 @@
       </div>
       
     </div>
-  </div>
-  <form action="/profile/{{Auth::user()->profile->id}}" method="post" class=text-right>
+    <form action="/profile/{{Auth::user()->profile->id}}" method="post" class=text-right>
     @csrf
     @method('DELETE')
    <input type="submit" value="Delete Account" class="btn btn-danger btn-sm">
   </form>
+  </div>
+  
 @endsection

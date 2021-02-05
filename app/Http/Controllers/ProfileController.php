@@ -31,7 +31,7 @@ class ProfileController extends Controller
             "nama"=> $request["nama"],
             "phone_number"=> $request["phone_number"],
             "deskripsi"=> $request["deskripsi"],
-            "email"=>$request["e-mail"],
+            "email"=>Auth::user()->email,
             "user_id" =>Auth::user()->id
         ]);
         Alert::success('Berhasil', 'Berhasil menyimpan');
