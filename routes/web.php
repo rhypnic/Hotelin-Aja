@@ -31,3 +31,7 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 Route::get('/show/profile', function () {
     return view('projek_akhir.crud_profile.show-profile');
 });
+
+Route::get('/reservasi', function () {
+    return view('projek_akhir.crud_reservasi.index');
+});
