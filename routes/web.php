@@ -27,6 +27,14 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
+Route::get('/show/profile', function () {
+    return view('projek_akhir.crud_profile.show-profile');
+});
+
+Route::get('/reservasi', function () {
+    return view('projek_akhir.crud_reservasi.index');
+});
+
 Route::resource('hotel', 'HotelController');
 //Route::post('/register', 'LoginController@post');
 Route::get('/keluar', 'LoginController@logout');
