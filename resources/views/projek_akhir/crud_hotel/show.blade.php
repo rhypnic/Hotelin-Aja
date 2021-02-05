@@ -5,7 +5,8 @@
 @section('content')
 <div class="section-body">
             <h2 class="section-title">Hotel Anda</h2>
-            <div class="card">
+            
+            <div class="card" style="width: 30rem;"  style="height: 15rem";>
               <div class="card-header">
                 <h4>{{$hotel->nama_hotel}}</h4>
               </div>

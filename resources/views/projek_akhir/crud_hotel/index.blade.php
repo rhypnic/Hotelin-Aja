@@ -17,7 +17,7 @@
           
         
     <div class="col">
-      <article class="article article-style-c">
+      <article class="article article-style-c"  style="width: 20rem;"  style="height: 15rem;"> 
         <div class="article-header">
           <div class="article-image" data-background="{{$item->gambar_hotel}}" style="background-image: url(&quot;{{$item->gambar_hotel}}&quot;);">
           </div>
@@ -33,10 +33,12 @@
                 <a>{{$item->alamat}}</a>
             </div>
             <div class="text-job"><h4>${{$item->harga}}</h4></div>
-            <a class="btn btn-primary d-md-flex justify-content-md-center" href="{{route('hotel.show', ['hotel'=>$item->id])}}" role="button">Show</a>
+            <div class="d-flex justify-content-between">
+            <a type="submit" href="{{route('hotel.show', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Show</a>
+            <a type="submit" href="{{route('hotel.edit', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Edit</a>
             </div>
-            <a class="btn btn-primary d-md-flex justify-content-md-center" href="{{route('hotel.edit', ['hotel'=>$item->id])}}" role="button">Edit</a>
             
+          </div>
             
 
           </div>
