@@ -28,3 +28,7 @@ Route::get('/edit/profile', function () {
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+Route::resource('hotel', 'HotelController');
+//Route::post('/register', 'LoginController@post');
+Route::get('/keluar', 'LoginController@logout');

@@ -5,7 +5,7 @@
 @endpush
 
 @section('header-content')
-<h1> Edit My Profile </h1>
+<h1> Create Hotel </h1>
 @endsection
 
 @section('sidebar-tools')

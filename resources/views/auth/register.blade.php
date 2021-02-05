@@ -25,6 +25,8 @@
                             </div>
                         </div>
 
+                       
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -60,6 +62,16 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                         <div class="form-group row mb-4">
+                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Register Sebagai</label>
+                            <div class="col-sm-12 col-md-7">
+                              <select class="form-control selectric" name="role">
+                                <option>penyewa</option>
+                                <option>penyedia</option>
+                              </select>
+                            </div>
+                          </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

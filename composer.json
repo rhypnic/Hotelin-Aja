@@ -10,8 +10,10 @@
     "require": {
         "php": "^7.2.5|^8.0",
         "fideloper/proxy": "^4.4",
+        "intervention/image": "^2.5",
         "laravel/framework": "^6.20",
         "laravel/tinker": "^2.5",
+        "realrashid/sweet-alert": "^3.2",
         "unisharp/laravel-filemanager": "^2.2"
     },
     "require-dev": {

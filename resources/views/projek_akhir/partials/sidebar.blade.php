@@ -10,7 +10,7 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
           <ul class="dropdown-menu">
-            <li><a class="hotelin" href="/hotelin">home</a></li>
+            <li><a class="hotelin" href="/hotel">home</a></li>
             @yield('sidebar-dashboard')
           </ul>
         </li>
