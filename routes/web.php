@@ -21,9 +21,7 @@ Route::get('/blank-hotelin', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/edit/profile', function () {
-    return view('projek_akhir.crud_profile.edit-profile');
-});
+
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
@@ -32,3 +30,10 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 Route::resource('hotel', 'HotelController');
 //Route::post('/register', 'LoginController@post');
 Route::get('/keluar', 'LoginController@logout');
+Route::get('/profile', 'ProfileController@index');
+Route::get('/profile/{profile_id}', 'ProfileController@show');
+Route::get('/profile/{profile_id}/edit', 'ProfileController@edit');
+Route::get('/create/profile', 'ProfileController@create' );
+Route::post('/profile', 'ProfileController@store');
+Route::put('/profile/{profile_id}', 'ProfileController@update');
+Route::delete('/profile/{profile_id}', 'ProfileController@destroy');

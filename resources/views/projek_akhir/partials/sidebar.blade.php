@@ -18,11 +18,11 @@
         
         <li class="menu-header">Pages</li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
+          <a href="" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
           <ul class="dropdown-menu">
             
-            <li><a href="auth-register.html">profiles</a></li>
-            <li><a href="auth-register.html">Register new Account</a></li>
+            <li><a href="../../../profile/{$profile->id}/edit">Edit Profiles</a></li>
+            <li><a href="../../../register">logout</a></li>
             
           </ul>
         </li>
