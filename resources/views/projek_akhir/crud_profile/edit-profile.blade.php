@@ -5,25 +5,24 @@
 @endpush
 
 @section('header-content')
-<h1> Edit My Profile </h1>
+<h1> Create Hotel </h1>
 @endsection
 
-@section('sidebar-tools')
-<li><a class="nav-link" href="#">my transaction</a></li>
-@endsection
+
 
 @section('content')
-<form method="get" action="/show/profile" class="needs-validation" novalidate="">
+<form method="post" action="/profile/{{Auth::user()->profile->id}}" role="form" class="needs-validation" novalidate="">
     @csrf
+    @method('PUT')
                     <div class="card-header">
-                     <h4> {{Auth::user()->name}}'s Profile</h4 >
-              
+                     <h4> {{Auth::user()->profile->nama}}'s Profile</h4 >
+                      
                     </div>
                     <div class="card-body">
                         <div class="row">                               
                           <div class="form-group col-md-6 col-12">
                             <label>Real Name</label>
-                            <input type="text" class="form-control" value="" name="nama" required="">
+                            <input type="text" class="form-control" value="{{Auth::user()->profile->nama}}" name="nama" required="">
                             <div class="invalid-feedback">
                               Please fill in the first name
                             </div>
@@ -33,14 +32,14 @@
                         <div class="row">
                           <div class="form-group col-md-7 col-12">
                             <label>Email</label>
-                            <input type="email" class="form-control" value="{{Auth::user()->email}}" required="" disabled>
+                            <input type="text" class="form-control" value="{{Auth::user()->email}}" required="" disabled>
                             <div class="invalid-feedback">
                               Please fill in the email
                             </div>
                           </div>
                           <div class="form-group col-md-5 col-12">
                             <label>Phone</label>
-                            <input type="tel" class="form-control" value="" name="phone_number">
+                            <input type="tel" class="form-control" value="{{Auth::user()->profile->phone_number}}" name="phone_number">
                           </div>
                         </div>
 
@@ -48,26 +47,20 @@
                           <div class="form-group col-12">
                             <label>Bio</label>
                             {{-- <input type="body" class="form-control" id="body" name="deskripsi" value="{{old('deskripsi', '') }}" placeholder="buat deskripsi" required> --}}
-                            <textarea name="deskripsi" class="form-control my-editor">{!! old('deskripsi', $deskripsi ?? '') !!}</textarea>
+                            <textarea name="deskripsi" value="{{old('deskripsi', '') }}" class="form-control my-editor">{!! old('deskripsi', $deskripsi ?? '') !!}</textarea>
                           </div>
                         </div>
                         
                     </div>
-                    <div class="d-flex justify-content-between">
+                    <div class="text-right">
                      
                       
-                      <form action="#" method="post">
-                        @csrf
-                        @method('DELETE')
-                       <input type="submit" value="Delete Account" class="btn btn-danger btn-sm">
-                      </form>
+                     
                       <button class="btn btn-primary">Save Changes</button>
-                    </div>
-                     
-                        
-                      
-                  </form>
+                 
+                 </form>
                   
+                  </div>
 @endsection
 @push('scripts')
 <script>

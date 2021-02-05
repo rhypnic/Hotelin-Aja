@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>@yield('title', 'Hotelin - Pesan Hotel Dimanapun Kamu Mau')</title>
@@ -20,6 +22,7 @@
 </head>
 
 <body>
+  
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
@@ -58,6 +61,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
   <script src="{{asset('stisla/assets/js/stisla.js')}}"></script>
 
   <!-- JS Libraies -->
@@ -68,5 +72,7 @@
 
   <!-- Page Specific JS File -->
   @stack('scripts')
+  @include('sweetalert::alert')
+
 </body>
 </html>
