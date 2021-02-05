@@ -26,7 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-<<<<<<< HEAD
+
 Route::get('/show/profile', function () {
     return view('projek_akhir.crud_profile.show-profile');
 });
@@ -34,7 +34,6 @@ Route::get('/show/profile', function () {
 Route::get('/reservasi', function () {
     return view('projek_akhir.crud_reservasi.index');
 });
-=======
 
 Route::resource('hotel', 'HotelController');
 //Route::post('/register', 'LoginController@post');
@@ -46,4 +45,3 @@ Route::get('/create/profile', 'ProfileController@create' );
 Route::post('/profile', 'ProfileController@store');
 Route::put('/profile/{profile_id}', 'ProfileController@update');
 Route::delete('/profile/{profile_id}', 'ProfileController@destroy');
->>>>>>> 4b12423a0eb0c7ca4b03d6b4a0c0494c9111a4aa
