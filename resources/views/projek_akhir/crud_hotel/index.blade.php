@@ -7,6 +7,7 @@
   <li><a class="" href="#">My Transaction</a></li>
 @endif
 @endsection
+@section('content')
 {{-- <div class="container"> --}}
   
   {{-- <div class="col"> --}}

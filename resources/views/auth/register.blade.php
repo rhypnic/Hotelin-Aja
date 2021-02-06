@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header" style="background-color:#13f07a;">{{ __('Register') }} in Hotelin-Aja</div>
 
-                <div class="card-body">
+                <div class="card-body" style="background-color:#00ffa2">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -63,19 +63,11 @@
                             </div>
                         </div>
 
-                         <div class="form-group row mb-4">
-                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Register Sebagai</label>
-                            <div class="col-sm-12 col-md-7">
-                              <select class="form-control selectric" name="role">
-                                <option>penyewa</option>
-                                <option>penyedia</option>
-                              </select>
-                            </div>
-                          </div>
+                         
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" style="background-color:#0ead33">
                                     {{ __('Register') }}
                                 </button>
                             </div>
