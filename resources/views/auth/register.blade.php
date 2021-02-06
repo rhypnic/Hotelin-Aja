@@ -67,8 +67,8 @@
                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Register Sebagai</label>
                             <div class="col-sm-12 col-md-7">
                               <select class="form-control selectric" name="role">
-                                <option>penyewa</option>
-                                <option>penyedia</option>
+                                  <option value="1">Penyedia</option>
+                                  <option value="2">Penyewa</option>
                               </select>
                             </div>
                           </div>

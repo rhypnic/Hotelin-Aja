@@ -16,10 +16,14 @@ class ReservasiController extends Controller
      */
     public function index()
     {
-        @if()
-        @endif
-        $reservasi = Reservasi::paginate('10');
-        return view('projek_akhir.crud_reservasi.index', compact('reservasi'));
+        // if(Auth::user()->role === 1){
+            $reservasi = Reservasi::paginate('10');
+            return view('projek_akhir.crud_reservasi.index', compact('reservasi'));
+            // }
+            // if(Auth::user()->role === 2){
+            //     $reservasi = Reservasi::paginate('10');
+            //     return view('projek_akhir.crud_reservasi.index', compact('reservasi'));
+            // }
     }
 
     /**
