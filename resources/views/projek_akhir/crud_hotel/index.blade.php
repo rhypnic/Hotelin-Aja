@@ -7,6 +7,10 @@
   <li><a class="" href="#">My Transaction</a></li>
 @endif
 @endsection
+@section ('header-content')
+<h1>LIST OF HOTELS</h1>
+@endsection
+
 @section('content')
 {{-- <div class="container"> --}}
   
@@ -36,9 +40,15 @@
             </div>
             <div class="text-job"><h4>${{$item->harga}}</h4></div>
             <div class="d-flex justify-content-between">
-            <a type="submit" href="{{route('hotel.show', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Show</a>
             
-            <a type="submit" href="{{route('hotel.edit', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Edit</a>
+              @if (Auth::user()->role==1)
+              <a type="submit" href="{{route('hotel.edit', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Edit</a>
+              <a type="submit" href="{{route('hotel.show', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Show</a>
+              @else
+              <a type="submit" href="#" class="btn btn-primary btn-sm">Reservasi</a>
+              @endif
+            
+            
             </div>
             
           </div>

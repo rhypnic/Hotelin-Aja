@@ -16,8 +16,7 @@ class ReservasiController extends Controller
      */
     public function index()
     {
-        @if()
-        @endif
+       
         $reservasi = Reservasi::paginate('10');
         return view('projek_akhir.crud_reservasi.index', compact('reservasi'));
     }

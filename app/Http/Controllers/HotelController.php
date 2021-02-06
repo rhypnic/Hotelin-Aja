@@ -99,7 +99,17 @@ class HotelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+        $profile=Hotel::where('id',$id)->update([
+            "nama_hotel" => $request["nama_hotel"],
+            "kategori" => $request["kategori"],
+            "deskripsi" => $request["deskripsi"],
+            "gambar_hotel" => $request["gambar_hotel"],
+            "alamat" => $request["alamat"],
+            "harga" => $request["harga"]
+        ]);
+        Alert::success('Berhasil', 'Berhasil diedit');
+        return redirect('/hotel')->with('success', 'post berhasil di edit');
     }
 
     /**
@@ -110,6 +120,7 @@ class HotelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        hotel::destroy($id);
+        return redirect('../../hotel');
     }
 }

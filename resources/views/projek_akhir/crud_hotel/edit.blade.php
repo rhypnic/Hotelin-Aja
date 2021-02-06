@@ -8,6 +8,10 @@
 @endif
 @endsection
 
+@section('header-content')
+<h1> Edit Hotel</h1>
+@endsection
+
 @push ('script-head')
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <!-- General JS Scripts -->
@@ -83,7 +87,7 @@
         <div class="form-group row mb-4">
           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
           <div class="col-sm-12 col-md-7">
-            <button type="submit" class="btn btn-primary">Create Hotel</button>
+            <button type="submit" class="btn btn-primary">Edit Hotel</button>
           </div>
         </div>
       </div>
