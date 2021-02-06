@@ -74,5 +74,7 @@
   @stack('scripts')
   @include('sweetalert::alert')
 
+  @yield('addons')
+
 </body>
 </html>

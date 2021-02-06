@@ -31,10 +31,6 @@ Route::get('/show/profile', function () {
     return view('projek_akhir.crud_profile.show-profile');
 });
 
-Route::get('/reservasi', function () {
-    return view('projek_akhir.crud_reservasi.index');
-});
-
 Route::resource('hotel', 'HotelController');
 //Route::post('/register', 'LoginController@post');
 Route::get('/keluar', 'LoginController@logout');
@@ -45,3 +41,5 @@ Route::get('/create/profile', 'ProfileController@create' );
 Route::post('/profile', 'ProfileController@store');
 Route::put('/profile/{profile_id}', 'ProfileController@update');
 Route::delete('/profile/{profile_id}', 'ProfileController@destroy');
+
+Route::resource('reservasi', 'ReservasiController');
