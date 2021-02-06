@@ -1,6 +1,12 @@
 @extends('projek_akhir.blank')
 
-
+@section('sidebar-tools')
+@if (Auth::user()->role==1)
+  <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
+@else
+  <li><a class="" href="#">My Transaction</a></li>
+@endif
+@endsection
 
 @section('content')
 <div class="section-body">

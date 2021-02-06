@@ -4,8 +4,16 @@
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 @endpush
 
+@section('sidebar-tools')
+@if (Auth::user()->role==1)
+  <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
+@else
+  <li><a class="" href="#">My Transaction</a></li>
+@endif
+@endsection
+
 @section('header-content')
-<h1> Create Hotel </h1>
+<h1> Edit Profile </h1>
 @endsection
 
 

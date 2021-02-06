@@ -5,13 +5,11 @@
 @endsection
 
 @section('sidebar-tools')
-@if (strcmp($roleku,$role2)==0)
-    <li><a class="../../hotelin" href="hotel/create">Create Hotel</a></li>
+@if (Auth::user()->role==1)
+  <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
 @else
-    <li><a class="../../hotelin" href="hotel/create">My Transaction</a></li>
+  <li><a class="" href="#">My Transaction</a></li>
 @endif
-    
-    
 @endsection
 
 @section('content')

@@ -1,11 +1,12 @@
 @extends('projek_akhir.blank')
 
-@section('sidebar-dashboard')
-<li><a class="hotelin" href="hotel/create">Create Hotel</a></li>
-
+@section('sidebar-tools')
+@if (Auth::user()->role==1)
+  <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
+@else
+  <li><a class="" href="#">My Transaction</a></li>
+@endif
 @endsection
-
-@section('content')
 {{-- <div class="container"> --}}
   
   {{-- <div class="col"> --}}
@@ -35,6 +36,7 @@
             <div class="text-job"><h4>${{$item->harga}}</h4></div>
             <div class="d-flex justify-content-between">
             <a type="submit" href="{{route('hotel.show', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Show</a>
+            
             <a type="submit" href="{{route('hotel.edit', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Edit</a>
             </div>
             
