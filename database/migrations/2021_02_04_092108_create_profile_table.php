@@ -15,14 +15,14 @@ class CreateProfileTable extends Migration
     {
         Schema::create('profile', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('nama');
             $table->string('email')->unique();
             $table->string('photo');
             $table->unsignedBigInteger('user_id');
             $table->string('phone_number');
             $table->foreign('user_id')->references('id')->on ('users');
             $table->string('deskripsi');
-            
+            $table->enum('role',['Penginap','Penyedia']);
             $table->timestamps();
         });
     }

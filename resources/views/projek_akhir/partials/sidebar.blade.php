@@ -22,7 +22,7 @@
           <ul class="dropdown-menu">
             
             <li><a href="../../../profile/{$profile->id}/edit">Edit Profiles</a></li>
-            <li><a href="../../../register">logout</a></li>
+            <li><a href="../../../keluar">logout</a></li>
             
           </ul>
         </li>

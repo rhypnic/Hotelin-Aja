@@ -14,7 +14,7 @@ class ProfileController extends Controller
         // ->except(['index']);
     }
     public function create()
-    {
+    {   
         return view('projek_akhir.crud_profile.create-profile');
     }
     public function index()
@@ -25,8 +25,10 @@ class ProfileController extends Controller
     }
     public function store(Request $request)
     {   
-        
-        
+        $role1="penginap";
+        $role2="penyedia";
+        $roleku=Auth::user()->role;
+
         $profile=profile:: create([
             "nama"=> $request["nama"],
             "phone_number"=> $request["phone_number"],
