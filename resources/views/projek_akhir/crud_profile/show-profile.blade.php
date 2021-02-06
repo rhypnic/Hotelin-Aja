@@ -35,7 +35,12 @@
         <div class="profile-widget-items">
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">Role</div>
-            <div class="profile-widget-item-value">{{Auth::user()->role}}</div>
+            <div class="profile-widget-item-value">
+              @if (Auth::user()->role==1)
+              Penyedia
+            @else
+              Penginap
+            @endif</div>
           </div>
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">id</div>
