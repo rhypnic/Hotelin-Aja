@@ -17,11 +17,8 @@ class CreateHotelTable extends Migration
             $table->bigIncrements('id');
             
             $table->string('nama_hotel');
-            $table->string('kategori');
-            $table->longText('deskripsi');
-            $table->binary('gambar_hotel');
-            $table->string('alamat');
-            $table->string('harga');
+            $table->string('alamat_hotel');
+            $table->string('gambar_hotel');
             $table->unsignedBigInteger('profile_id');
 
             $table->foreign('profile_id')->references('id')->on ('profile');
