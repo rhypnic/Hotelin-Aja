@@ -1,6 +1,9 @@
 @extends('projek_akhir.blank')
 
 
+@section('sidebar-tools')
+<li><a class="nav-link" href="../../reservasi">my transaction</a></li>
+@endsection
 
 @section('content')
 <div class="section-body">
@@ -8,22 +11,27 @@
             
             <div class="card" style="width: 30rem;"  style="height: 15rem";>
               <div class="card-header">
-                <h4>{{$reservasi->profile_id}}</h4>
+                <h4>{{Auth::user()->profile->nama}}</h4>
               </div>
               <div class="card-body">
-                <p>{{$reservasi->kamar_id}}</p>
+                @if ($reservasi->kamar_id==1)
+                    <p>Single Bed</p>
+                @else
+                    <p>Double Bed</p>
+                @endif
               </div>
               <div class="row">
+                <ul>
                   <div class="card-footer bg-whitesmoke">
-                    Harga/malam = {{$reservasi->tggl_checkin}}
+                    Checkin= {{$reservasi->tggl_checkin}}
                   </div>
                   <div class="card-footer bg-whitesmoke">
-                      Alamat = {{$reservasi->tggl_checkout}}
+                      Checkout = {{$reservasi->tggl_checkout}}
                   </div>
                   <div class="card-footer bg-whitesmoke">
                       Status = {{$reservasi->status}}
                   </div>
-
+                </ul>
               </div>
             </div>
             

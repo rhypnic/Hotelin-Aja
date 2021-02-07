@@ -19,9 +19,7 @@ class CreateReservasiTable extends Migration
             $table->date('tggl_checkin');
             $table->date('tggl_checkout');
             $table->timestamps();
-            $table->unsignedBigInteger('kamar_id');
-            
-            $table->foreign('kamar_id')->references('id')->on ('kamar');
+            $table->integer('kamar_id');
             $table->unsignedBigInteger('profile_id');
             
             $table->foreign('profile_id')->references('id')->on ('profile');

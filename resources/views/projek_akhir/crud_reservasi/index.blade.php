@@ -45,7 +45,7 @@
                                                 #
                                             </th>
                                             <th>
-                                                Nama Penyewa
+                                                Id Penyewa
                                             </th>
                                             <th>
                                                 Kamar
@@ -70,7 +70,11 @@
                                             <td>{{$key + $reservasi->firstitem()}}    
                                             </td>
                                             <td>{{$item ->profile_id}}</td>
-                                            <td>{{$item ->kamar_id}}</td>
+                                            <td> @if ($item->kamar_id==1)
+                                                <p>Single Bed</p>
+                                            @else
+                                                <p>Double Bed</p>
+                                            @endif</td>
                                             <td>{{$item ->tggl_checkin}}</td>
                                             <td>{{$item ->tggl_checkout}}</td>
                                             <td>

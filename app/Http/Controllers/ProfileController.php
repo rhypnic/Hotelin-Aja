@@ -21,22 +21,12 @@ class ProfileController extends Controller
     public function index()
     {   
         //$posts=DB::table('pertanyaan')->get();
-        $role1="penginap";
-         $role2="penyedia";
-         $roleku=Auth::user()->role;
             
         return view('projek_akhir.crud_profile.show-profile');
     }
     public function store(Request $request)
     {   
-        $request->validate([
-            'nama' => 'required',
-            'phone_number' => 'required',
-            'deskripsi' => 'required'
-        ]);
-        $role1="penginap";
-        $role2="penyedia";
-        $roleku=Auth::user()->role;
+        
         
         $profile=profile:: create([
             "nama"=> $request["nama"],
@@ -52,22 +42,17 @@ class ProfileController extends Controller
     }
 public function edit($id)
         {   
-        $role1="penginap";
-         $role2="penyedia";
-         $roleku=Auth::user()->role;
+        
             
-            return view('projek_akhir.crud_profile.edit-profile',compact('role1','role2','roleku'));
+            return view('projek_akhir.crud_profile.edit-profile');
         }
         public function show($id)
     {   
        // $posts=DB::table('pertanyaan')->where('id',$id)->first();
-       $role1="penginap";
-       $role2="penyedia";
-       $rolemu=$role2;
-      $roleku=strcmp('$role2' ,'$rolemu' ); /*penyedia*/
+       
         
         $profile=profile::find($id);
-        return view('projek_akhir.crud_profile.show-profile',compact('profile','role1','role2','roleku'));
+        return view('projek_akhir.crud_profile.show-profile',compact('profile'));
     }
     public function update($id,Request $request)
     {   
