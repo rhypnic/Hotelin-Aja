@@ -10,6 +10,7 @@
 
 @section('content')
 <div class="section-body">
+  
             <h2 class="section-title">Hotel Anda</h2>
             
             <div class="card" style="width: 20rem;"  style="height: 15rem";>

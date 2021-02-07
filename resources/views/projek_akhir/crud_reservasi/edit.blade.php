@@ -34,11 +34,11 @@
             @method('patch')
               <div class="form-group">
                   <label>Nama Penyewa</label>
-                  <input type="text" class="form-control" name="nama_penyewa" value="{{Auth::user()->profile->nama}}">
+                  <input type="text" class="form-control" name="nama_penyewa" value="{{Auth::user()->profile->nama}}" disabled>
               </div>
               <div class="form-group">
                   <label>Nama Hotel</label>
-                  <input type="text" class="form-control" name="nama_hotel" value="{{$reservasi->nama_hotel}}">
+                  <input type="text" class="form-control" name="nama_hotel" value="{{$reservasi->nama_hotel}}" disabled>
               </div>
               <div class="form-group">
                   <label>Type Kamar</label>
