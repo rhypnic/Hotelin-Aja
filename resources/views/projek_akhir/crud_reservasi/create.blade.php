@@ -39,7 +39,7 @@
               </div>
               <div class="form-group">
                   <label>Nama Hotel</label>
-                  <input type="text" class="form-control" name="nama_hotel"  >
+                  <input type="text" class="form-control" name="nama_hotel" value="{{$nama}}" disabled>
               </div>
               <div class="form-group">
                   <label>Type Kamar</label>

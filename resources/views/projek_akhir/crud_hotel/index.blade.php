@@ -49,7 +49,7 @@
               <a type="submit" href="{{route('hotel.edit', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Edit</a>
               <a type="submit" href="{{route('hotel.show', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Show</a>
               @else
-              <a type="submit" href="../../reservasi/create" class="btn btn-primary btn-sm">Reservasi</a>
+              <a type="submit" href="{{route('reservasi.create', ['hotel'=>$item->nama_hotel])}}" class="btn btn-primary btn-sm">Reservasi</a>
               @endif
             
             

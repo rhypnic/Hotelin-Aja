@@ -50,8 +50,8 @@
                         <div class="row">
                           <div class="form-group col-12">
                             <label>Bio</label>
-                            {{-- <input type="body" class="form-control" id="body" name="deskripsi" value="{{old('deskripsi', '') }}" placeholder="buat deskripsi" required> --}}
-                            <textarea name="deskripsi" class="form-control my-editor">{!! old('deskripsi', $deskripsi ?? '') !!}</textarea>
+                            <input type="body" class="form-control" id="body" name="deskripsi" value="{{old('deskripsi', '') }}" placeholder="buat deskripsi" required>
+                            <textarea name="deskripsi" >{!! old('deskripsi', $deskripsi ?? '') !!}</textarea>
                           </div>
                         </div>
                         

@@ -26,9 +26,11 @@ class ReservasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $nama_hotel)
     {
-        return view('projek_akhir.crud_reservasi.create');
+        
+        $nama = $nama_hotel->hotel;
+        return view('projek_akhir.crud_reservasi.create', compact('nama'));
     }
 
     /**
@@ -39,6 +41,7 @@ class ReservasiController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
             
             'type_kamar'=> 'required',
