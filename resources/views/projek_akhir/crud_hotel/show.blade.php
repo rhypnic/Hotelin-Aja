@@ -4,12 +4,13 @@
 @if (Auth::user()->role=='penyedia')
   <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
 @else
-  <li><a class="" href="#">My Transaction</a></li>
+  <li><a class="" href="../../reservasi">My Transaction</a></li>
 @endif
 @endsection
 
 @section('content')
 <div class="section-body">
+  
             <h2 class="section-title">Hotel Anda</h2>
             
             <div class="card" style="width: 20rem;"  style="height: 15rem";>

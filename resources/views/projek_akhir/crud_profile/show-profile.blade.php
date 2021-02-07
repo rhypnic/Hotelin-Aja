@@ -6,7 +6,7 @@
 
 @section('sidebar-tools')
 @if (Auth::user()->role=='penyedia')
-  <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
+  <li><a class="hotelin" href="../../hotel/create">Register Hotel</a></li>
 @else
   <li><a class="" href="../../reservasi">My Transaction</a></li>
 @endif
@@ -36,18 +36,16 @@
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">Role</div>
             <div class="profile-widget-item-value">
-              @if (Auth::user()->role=='penyedia')
-              Penyedia
-            @else
-              Penginap
-            @endif</div>
+              {{Auth::user()->role}}
+        
+          </div>
           </div>
           <div class="profile-widget-item">
-            <div class="profile-widget-item-label">id</div>
+            <div class="profile-widget-item-label">User Id</div>
             <div class="profile-widget-item-value">{{Auth::user()->id}}</div>
           </div>
           <div class="profile-widget-item">
-            <div class="profile-widget-item-label">phone</div>
+            <div class="profile-widget-item-label">Phone Number</div>
             <div class="profile-widget-item-value">{{Auth::user()->profile->phone_number}}</div>
           </div>
         </div>

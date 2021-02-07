@@ -53,7 +53,7 @@
                 <label>Tanggal Checkout</label>
                 <input type="text" class="form-control datetimepicker" name="tggl_checkout" placeholder="YYYY-MM-DD">
               </div>
-              <input type="hidden" name="status" value="Belum Checkin">
+              <input type="hidden" name="status" value="Menunggu Pembayaran">
               <div class="row">
 
                 <div class="col-6">

@@ -5,9 +5,13 @@
 <li><a class="nav-link" href="../../reservasi">my transaction</a></li>
 @endsection
 
+@section('header-content')
+<h1> your transaction </h1>
+@endsection
+
 @section('content')
 <div class="section-body">
-            <h2 class="section-title">Hotel Anda</h2>
+            <h2 class="section-title">{{$reservasi->nama_hotel}}</h2>
             
             <div class="card" style="width: 30rem;"  style="height: 15rem";>
               <div class="card-header">
@@ -15,7 +19,7 @@
               </div>
               <div class="card-body">
                 @if ($reservasi->kamar_id==1)
-                    <p>Single Bed</p>
+                    <p>Single Bed </p>
                 @else
                     <p>Double Bed</p>
                 @endif

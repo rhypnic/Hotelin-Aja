@@ -12,7 +12,7 @@
 @endpush
 
 @section('header-content')
-<h1>My Profile </h1>
+<h1>Reservation </h1>
 @endsection
 
 @section('sidebar-tools')
@@ -24,7 +24,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4>Basic DataTables</h4>
+                <h4>List Of Transaction</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -78,17 +78,12 @@
                                             <td>{{$item ->tggl_checkin}}</td>
                                             <td>{{$item ->tggl_checkout}}</td>
                                             <td>
-                                                @if ($item->status == "Belum Checkin") 
-                                                <div class="badge badge-info">{{$item ->status}}</div>
-                                                @endif
-                                                @if ($item->status == "Checked In") 
-                                                <div class="badge badge-success">{{$item ->status}}</div>
-                                                @endif
-                                                @if ($item->status == "Checked Out") 
-                                                <div class="badge badge-secondary">{{$item ->status}}</div>
-                                                @endif
-                                                @if ($item->status == "Cancelled") 
+                                                @if ($item->status == "Menunggu Pembayaran") 
+                                                <div class="badge badge-warning">{{$item ->status}}</div>
+                                                @elseif($item->status == "Cancelled")
                                                 <div class="badge badge-danger">{{$item ->status}}</div>
+                                                @else
+                                                <div class="badge badge-info">{{$item ->status}}</div>
                                                 @endif
                                                 
                                             </td>
@@ -97,8 +92,12 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <a href="{{route('reservasi.show', ['reservasi'=>$item->id])}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                                <a href="{{route('reservasi.edit', ['reservasi'=>$item->id])}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                                                <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+                                                @if(auth::user()->role=='penyedia')
+                                                    <a href="{{route('reservasi.edit', ['reservasi'=>$item->id])}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
+                                                @endif
+                                                @if(auth::user()->role=='penyedia')
+                                                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+                                                @endif
                                             </form>
                                         </tr>
                                         @endforeach  
