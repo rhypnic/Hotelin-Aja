@@ -29,7 +29,7 @@
                   <div >
                     
                     <li>Alamat = {{$hotel->alamat}}</li>
-                    <li>user_id = {{$hotel->penyedia->id}}</li>
+                    <li>Owner = {{$hotel->penyedia->email}}</li>
                     </ul>
                   </div>
               <form action="/hotel/{{$hotel->id}}" method="post" class=text-right>

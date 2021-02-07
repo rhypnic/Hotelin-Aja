@@ -5,7 +5,7 @@
 @endsection
 
 @section('sidebar-tools')
-<li><a class="nav-link" href="#">my transaction</a></li>
+<li><a class="nav-link" href="../../reservasi">my transaction</a></li>
 @endsection
 
 @push('style')
@@ -34,7 +34,7 @@
             @method('patch')
               <div class="form-group">
                   <label>Nama Penyewa</label>
-                  <input type="text" class="form-control" name="nama_penyewa" value="{{$reservasi->profile_id}}">
+                  <input type="text" class="form-control" name="nama_penyewa" value="{{Auth::user()->profile->nama}}">
               </div>
               <div class="form-group">
                   <label>Nama Hotel</label>
@@ -42,7 +42,7 @@
               </div>
               <div class="form-group">
                   <label>Type Kamar</label>
-                  <input type="text" class="form-control" name="type-kamar" value="{{$reservasi->kamar_id}}">
+                  <input type="text" class="form-control" name="type_kamar" value="{{$reservasi->kamar_id}}" placeholder="type '1' for single bed or '2' for double bed" >
               </div>
               <div class="form-group">
                 <label>Tanggal Checkin</label>
@@ -54,7 +54,7 @@
               </div>
               <div class="form-group">
                 <label>Tanggal Checkout</label>
-                <select class="form-control">
+                <select class="form-control" name="status">
                   <option selected value="{{$reservasi->status}}">{{$reservasi->status}} (Status Sebelumnya)</option>
                   <option value="Belum Checkin">Belum Checkin</option>
                   <option value="Checked In">Checked In</option>

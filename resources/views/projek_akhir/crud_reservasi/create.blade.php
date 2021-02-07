@@ -5,7 +5,7 @@
 @endsection
 
 @section('sidebar-tools')
-<li><a class="nav-link" href="#">my transaction</a></li>
+<li><a class="nav-link" href="../../reservasi">my transaction</a></li>
 @endsection
 
 @push('style')
@@ -35,15 +35,15 @@
             @csrf
               <div class="form-group">
                   <label>Nama Penyewa</label>
-                  <input type="text" class="form-control" name="nama_penyewa">
+                  <input type="text" class="form-control" name="nama_penyewa" value="{{auth::user()->profile->nama}}" disabled>
               </div>
               <div class="form-group">
                   <label>Nama Hotel</label>
-                  <input type="text" class="form-control" name="nama_hotel">
+                  <input type="text" class="form-control" name="nama_hotel"  >
               </div>
               <div class="form-group">
                   <label>Type Kamar</label>
-                  <input type="text" class="form-control" name="type_kamar">
+                  <input type="text" class="form-control" name="type_kamar" placeholder="type '1' for single bed or '2' for double bed">
               </div>
               <div class="form-group">
                 <label>Tanggal Checkin</label>
