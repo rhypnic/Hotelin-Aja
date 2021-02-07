@@ -24,7 +24,7 @@ class CreateReservasiTable extends Migration
             $table->foreign('kamar_id')->references('id')->on ('kamar');
             $table->unsignedBigInteger('profile_id');
             
-            $table->foreign('profile_id')->references('id')->on ('profile');
+            $table->foreign('user_id')->references('id')->on ('user');
         });
     }
 
