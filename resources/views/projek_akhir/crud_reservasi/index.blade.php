@@ -12,7 +12,7 @@
 @endpush
 
 @section('header-content')
-<h1>My Profile </h1>
+<h1>Reservation </h1>
 @endsection
 
 @section('sidebar-tools')
@@ -24,7 +24,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4>Basic DataTables</h4>
+                <h4>List Of Transaction</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
