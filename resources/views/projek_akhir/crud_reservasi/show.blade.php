@@ -2,7 +2,12 @@
 
 
 @section('sidebar-tools')
-<li><a class="nav-link" href="../../reservasi">my transaction</a></li>
+@if (Auth::user()->role=='penyedia')
+  <li><a class="hotelin" href="../../hotel/create">Register Hotel</a></li>
+  <li><a class="" href="../../reservasi">My Orders</a></li>
+@else
+<li><a class="" href="../../reservasi">My Transaction</a></li>
+@endif
 @endsection
 
 @section('header-content')

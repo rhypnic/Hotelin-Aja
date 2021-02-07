@@ -5,7 +5,12 @@
 @endsection
 
 @section('sidebar-tools')
-<li><a class="nav-link" href="../../reservasi">my transaction</a></li>
+@if (Auth::user()->role=='penyedia')
+  <li><a class="hotelin" href="../../hotel/create">Register Hotel</a></li>
+  <li><a class="" href="../../reservasi">My Orders</a></li>
+@else
+<li><a class="" href="../../reservasi">My Transaction</a></li>
+@endif
 @endsection
 
 @push('style')
@@ -39,7 +44,7 @@
               </div>
               <div class="form-group">
                   <label>Nama Hotel</label>
-                  <input type="text" class="form-control" name="nama_hotel" value="{{$nama}}" disabled>
+                  <input type="text" class="form-control" name="nama_hotel" value="{{$nama}}" >
               </div>
               <div class="form-group">
                   <label>Type Kamar</label>

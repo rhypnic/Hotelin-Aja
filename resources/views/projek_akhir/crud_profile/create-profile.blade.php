@@ -7,6 +7,7 @@
 @section('sidebar-tools')
 @if (Auth::user()->role=='penyedia')
   <li><a class="hotelin" href="../../hotel/create">Register Hotel</a></li>
+  <li><a class="" href="../../reservasi">My Orders</a></li>
 @else
 <li><a class="" href="../../reservasi">My Transaction</a></li>
 @endif
@@ -36,7 +37,7 @@
                         <div class="row">
                           <div class="form-group col-md-7 col-12">
                             <label>Email</label>
-                            <input type="email" class="form-control" value="{{Auth::user()->email}}" name="e-mail" required="" disabled>
+                            <input type="email" class="form-control" value="{{Auth::user()->email}}" name=" " required="" disabled>
                             <div class="invalid-feedback">
                               Please fill in the email
                             </div>
@@ -51,7 +52,7 @@
                           <div class="form-group col-12">
                             <label>Bio</label>
                             <input type="body" class="form-control" id="body" name="deskripsi" value="{{old('deskripsi', '') }}" placeholder="buat deskripsi" required>
-                            <textarea name="deskripsi" >{!! old('deskripsi', $deskripsi ?? '') !!}</textarea>
+                            
                           </div>
                         </div>
                         
@@ -60,7 +61,7 @@
                       <button class="btn btn-primary" onClick="this.form.submit(); this.disabled=true; this.value='Sending…'; ">Save</button>
                     </div>
                      
-                        
+                    <input type="hidden" name="e-mail" value="{{auth::user()->email">   
                       
                   </form>
 @endsection
