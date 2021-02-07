@@ -20,6 +20,7 @@ class CreateReservasiTable extends Migration
             $table->date('tggl_checkout');
             $table->timestamps();
             $table->integer('kamar_id');
+            $table->string('nama_hotel');
             $table->unsignedBigInteger('profile_id');
             
             $table->foreign('user_id')->references('id')->on ('user');
