@@ -52,11 +52,11 @@
               </div>
               <div class="form-group">
                 <label>Tanggal Checkin</label>
-                <input type="text" class="form-control datetimepicker" name="tggl_checkin" placeholder="YYYY-MM-DD">
+                <input type="date" class="form-control datetimepicker" name="tggl_checkin" placeholder="YYYY-MM-DD">
               </div>
               <div class="form-group">
                 <label>Tanggal Checkout</label>
-                <input type="text" class="form-control datetimepicker" name="tggl_checkout" placeholder="YYYY-MM-DD">
+                <input type="date" class="form-control datetimepicker" name="tggl_checkout" placeholder="YYYY-MM-DD">
               </div>
               <input type="hidden" name="status" value="Menunggu Pembayaran">
               <div class="row">

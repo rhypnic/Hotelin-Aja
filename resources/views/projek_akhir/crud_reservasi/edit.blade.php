@@ -51,11 +51,11 @@
               </div>
               <div class="form-group">
                 <label>Tanggal Checkin</label>
-                <input type="text" class="form-control datetimepicker" name="tggl_checkin" value="{{$reservasi->tggl_checkin}}">
+                <input type="date" class="form-control datetimepicker" name="tggl_checkin" value="{{$reservasi->tggl_checkin}}">
               </div>
               <div class="form-group">
                 <label>Tanggal Checkout</label>
-                <input type="text" class="form-control datetimepicker" name="tggl_checkout" value="{{$reservasi->tggl_checkout}}">
+                <input type="date" class="form-control datetimepicker" name="tggl_checkout" value="{{$reservasi->tggl_checkout}}">
               </div>
               <div class="form-group">
                 <label>Tanggal Checkout</label>

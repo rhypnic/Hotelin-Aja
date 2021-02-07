@@ -39,11 +39,13 @@
                   </div>
                   <div class="card-footer bg-whitesmoke">
                       Status = {{$reservasi->status}}
-                  </div>
+               </div>
                 </ul>
+                
               </div>
+              
             </div>
-            
+            <a href="{{route('reservasi.index')}}"><input type="submit"  class="btn btn-primary btn-sm" value="Kembali"></a>
           </div>
 @endsection
 

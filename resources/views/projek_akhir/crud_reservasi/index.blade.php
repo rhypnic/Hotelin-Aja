@@ -35,10 +35,12 @@
                 <div class="table-responsive">
                     <div id="table-1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
                         <div class="row">
+                            @if (Auth::user()->role!='penyedia')
                             <div class="col-sm-12">
                                  <a href="{{route('reservasi.create')}}" class="btn btn-primary btn-md ml-3 ">Tambahkan Reservasi</a>
                                  <br><br>
                             </div>
+                            @endif
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
