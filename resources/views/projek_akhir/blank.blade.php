@@ -71,6 +71,7 @@
   <script src="{{asset('stisla/assets/js/custom.js')}}"></script>
 
   <!-- Page Specific JS File -->
+  
   @stack('scripts')
   @include('sweetalert::alert')
 

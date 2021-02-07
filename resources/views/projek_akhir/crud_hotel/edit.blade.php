@@ -8,6 +8,10 @@
 @endif
 @endsection
 
+@section('header-content')
+<h1> Edit Hotel</h1>
+@endsection
+
 @push ('script-head')
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <!-- General JS Scripts -->
@@ -41,13 +45,16 @@
         <div class="form-group row mb-4">
           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Hotel</label>
           <div class="col-sm-12 col-md-7">
-            <input type="text" class="form-control" name="nama_hotel">
+            <input type="text" class="form-control" name="nama_hotel" value="{{old('nama_hotel', $hotel->nama_hotel)}}">
+            @error('nama_hotel')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
           </div>
         </div>
         <div class="form-group row mb-4">
           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category Kamar</label>
           <div class="col-sm-12 col-md-7">
-            <select class="form-control selectric" name="kategori">
+            <select class="form-control selectric" name="kategori" value="{{old('kategori', $hotel->kategori)}}" >
               <option>Single Bed</option>
               <option>Twin Bed</option>
             </select>
@@ -56,7 +63,10 @@
         <div class="form-group row mb-4">
           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
           <div class="col-sm-12 col-md-7">
-            <textarea class="summernote-simple" style="margin-top: 0px; margin-bottom: 0px; height: 76px;" name="deskripsi"></textarea>
+            <textarea class="summernote-simple" style="margin-top: 0px; margin-bottom: 0px; height: 76px;" name="deskripsi" value="{{old('deskripsi', $hotel->deskripsi)}}"></textarea>
+            @error('deskripsi')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
         </div>
         <div class="form-group row mb-4">
@@ -71,19 +81,27 @@
         <div class="form-group row mb-4">
             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Alamat</label>
             <div class="col-sm-12 col-md-7">
-              <input type="text" class="form-control inputtags" name="alamat">
+              <input type="text" class="form-control inputtags" name="alamat" value="{{old('alamat', $hotel->alamat)}}">
+              @error('alamat')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+          </div>
             </div>
           </div>
           <div class="form-group row mb-4">
             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga/malam</label>
             <div class="col-sm-12 col-md-7">
-              <input type="text" class="form-control inputtags" name="harga">
+              <input type="text" class="form-control inputtags" name="harga" value="{{old('harga', $hotel->harga)}}">
+              @error('harga')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+          </div>
             </div>
           </div>
         <div class="form-group row mb-4">
           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
           <div class="col-sm-12 col-md-7">
-            <button type="submit" class="btn btn-primary">Create Hotel</button>
+            <button type="submit" class="btn btn-primary">Edit Hotel</button>
           </div>
         </div>
       </div>

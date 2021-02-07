@@ -5,7 +5,7 @@
 @endsection
 
 @section('sidebar-tools')
-@if (Auth::user()->role==1)
+@if (Auth::user()->role=='penyedia')
   <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
 @else
   <li><a class="" href="#">My Transaction</a></li>
@@ -36,7 +36,7 @@
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">Role</div>
             <div class="profile-widget-item-value">
-              @if (Auth::user()->role==1)
+              @if (Auth::user()->role=='penyedia')
               Penyedia
             @else
               Penginap

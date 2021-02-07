@@ -5,70 +5,64 @@
 @endpush
 
 @section('sidebar-tools')
-@if (Auth::user()->role==1)
-<li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
+@if (Auth::user()->role=='penyedia')
+  <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
 @else
 <li><a class="" href="#">My Transaction</a></li>
 @endif
 @endsection
 
 @section('content')
-
-<form method="POST" action="/profile" role="form" class="needs-validation" novalidate=""
-    onsubmit="myButton.disabled = true; return true;">
+<form method="POST" action="/profile" role="form" class="needs-validation" novalidate="" onsubmit="myButton.disabled = true; return true;">
     @csrf
     @error('submit')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
-    <div class="card-header">
-        <h4> {{Auth::user()->email}}'s Profile</h4>
+                    <div class="card-header">
+                     <h4> {{Auth::user()->email}}'s Profile</h4 >
+                        
+                    </div>
+                    <div class="card-body">
+                        <div class="row">                               
+                          <div class="form-group col-md-6 col-12">
+                            <label>Real Name</label>
+                            <input type="text" class="form-control" value="" name="nama" required="">
+                            <div class="invalid-feedback">
+                              Please fill in the your name
+                            </div>
+                          </div>
+                        
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-md-7 col-12">
+                            <label>Email</label>
+                            <input type="email" class="form-control" value="{{Auth::user()->email}}" name="e-mail" required="" disabled>
+                            <div class="invalid-feedback">
+                              Please fill in the email
+                            </div>
+                          </div>
+                          <div class="form-group col-md-5 col-12">
+                            <label>Phone</label>
+                            <input type="tel" class="form-control" value="" name="phone_number">
+                          </div>
+                        </div>
 
-    </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="form-group col-md-6 col-12">
-                <label>Real Name</label>
-                <input type="text" class="form-control" value="" name="nama" required="">
-                <div class="invalid-feedback">
-                    Please fill in the first name
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="form-group col-md-7 col-12">
-                <label>Email</label>
-                <input type="email" class="form-control" value="{{Auth::user()->email}}" name="e-mail" required=""
-                    disabled>
-                <div class="invalid-feedback">
-                    Please fill in the email
-                </div>
-            </div>
-            <div class="form-group col-md-5 col-12">
-                <label>Phone</label>
-                <input type="tel" class="form-control" value="" name="phone_number">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-12">
-                <label>Bio</label>
-                {{-- <input type="body" class="form-control" id="body" name="deskripsi" value="{{old('deskripsi', '') }}"
-                placeholder="buat deskripsi" required> --}}
-                <textarea name="deskripsi"
-                    class="form-control my-editor">{!! old('deskripsi', $deskripsi ?? '') !!}</textarea>
-            </div>
-        </div>
-
-    </div>
-    <div class="text-right">
-        <button class="btn btn-primary"
-            onClick="this.form.submit(); this.disabled=true; this.value='Sending…'; ">Save</button>
-    </div>
-
-
-
-</form>
+                        <div class="row">
+                          <div class="form-group col-12">
+                            <label>Bio</label>
+                            {{-- <input type="body" class="form-control" id="body" name="deskripsi" value="{{old('deskripsi', '') }}" placeholder="buat deskripsi" required> --}}
+                            <textarea name="deskripsi" class="form-control my-editor">{!! old('deskripsi', $deskripsi ?? '') !!}</textarea>
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <div class="text-right">
+                      <button class="btn btn-primary" onClick="this.form.submit(); this.disabled=true; this.value='Sending…'; ">Save</button>
+                    </div>
+                     
+                        
+                      
+                  </form>
 @endsection
 
 @push ('scripts')

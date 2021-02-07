@@ -29,6 +29,11 @@ class ProfileController extends Controller
     }
     public function store(Request $request)
     {   
+        $request->validate([
+            'nama' => 'required',
+            'phone_number' => 'required',
+            'deskripsi' => 'required'
+        ]);
         $role1="penginap";
         $role2="penyedia";
         $roleku=Auth::user()->role;
