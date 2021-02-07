@@ -58,7 +58,7 @@
                 <input type="date" class="form-control datetimepicker" name="tggl_checkout" value="{{$reservasi->tggl_checkout}}">
               </div>
               <div class="form-group">
-                <label>Tanggal Checkout</label>
+                <label>Status</label>
                 <select class="form-control" name="status">
                   <option selected value="{{$reservasi->status}}">{{$reservasi->status}} (Status Sebelumnya)</option>
                   <option value="Menunggu Pembayaran">Menunggu Pembayaran</option>
