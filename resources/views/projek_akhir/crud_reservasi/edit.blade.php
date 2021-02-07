@@ -38,7 +38,7 @@
               </div>
               <div class="form-group">
                   <label>Nama Hotel</label>
-                  <input type="text" class="form-control" name="nama_hotel">
+                  <input type="text" class="form-control" name="nama_hotel" value="{{$reservasi->nama_hotel}}">
               </div>
               <div class="form-group">
                   <label>Type Kamar</label>
@@ -56,9 +56,11 @@
                 <label>Tanggal Checkout</label>
                 <select class="form-control" name="status">
                   <option selected value="{{$reservasi->status}}">{{$reservasi->status}} (Status Sebelumnya)</option>
-                  <option value="Belum Checkin">Belum Checkin</option>
+                  <option value="Menunggu Pembayaran">Menunggu Pembayaran</option>
+                  <option value="Pembayaran Diterima">Pembayaran Diterima</option>
                   <option value="Checked In">Checked In</option>
                   <option value="Checked Out">Checked Out</option>
+              
                   <option value="Cancelled">Cancelled</option>
                 </select>
               </div>

@@ -40,7 +40,7 @@ class ReservasiController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            
+            'nama_hotel'=> 'required',
             'type_kamar'=> 'required',
             'tggl_checkin'=> 'required',
             'tggl_checkout'=> 'required',
@@ -51,6 +51,7 @@ class ReservasiController extends Controller
 
         $reservasi = Reservasi::create([
             "profile_id"=> Auth::user()->profile->id,
+            "nama_hotel" => $request["nama_hotel"],
             "kamar_id" => $request["type_kamar"],
             "tggl_checkin"=> $request["tggl_checkin"],
             "tggl_checkout"=> $request["tggl_checkout"],
@@ -98,7 +99,7 @@ class ReservasiController extends Controller
     {
         // dd($request->tggl_checkout);
         $this->validate($request, [
-            
+            'nama_hotel'=> 'required',
             'type_kamar'=> 'required',
             'tggl_checkin'=> 'required',
             'tggl_checkout'=> 'required',
@@ -108,6 +109,7 @@ class ReservasiController extends Controller
         );
         $reservasi_data=Reservasi::where('id',$id)->update([
             "profile_id"=>  Auth::user()->profile->id,
+            "nama_hotel" => $request["nama_hotel"],
             "kamar_id" => $request["type_kamar"],
             "tggl_checkin"=> $request["tggl_checkin"],
             "tggl_checkout"=> $request["tggl_checkout"],
