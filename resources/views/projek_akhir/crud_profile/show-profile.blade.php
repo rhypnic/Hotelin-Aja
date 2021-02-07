@@ -36,7 +36,7 @@
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">Role</div>
             <div class="profile-widget-item-value">
-              @if (Auth::user()->role==1)
+              @if (Auth::user()->role=='penyedia')
               Penyedia
             @else
               Penginap

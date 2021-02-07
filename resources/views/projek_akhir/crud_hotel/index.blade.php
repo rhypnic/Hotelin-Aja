@@ -26,8 +26,8 @@
             <a class="nav-link active" href="#">Active</a> --}}
           
         
-    <div class="col">
-      <article class="article article-style-c"> 
+    <div class="col d-flex justify-content-start">
+      <article class="article article-style-c" style="width: 18rem;"  style="height: 15rem";> 
         <div class="article-header">
           <div class="article-image" data-background="{{$item->gambar_hotel}}" style="background-image: url(&quot;{{$item->gambar_hotel}}&quot;);">
           </div>
