@@ -6,7 +6,7 @@
 
 @section('sidebar-tools')
 @if (Auth::user()->role=='penyedia')
-  <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
+  <li><a class="hotelin" href="../../hotel/create">Register Hotel</a></li>
 @else
   <li><a class="" href="../../reservasi">My Transaction</a></li>
 @endif
