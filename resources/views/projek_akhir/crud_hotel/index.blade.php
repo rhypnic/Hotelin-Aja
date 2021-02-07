@@ -1,14 +1,18 @@
 @extends('projek_akhir.blank')
 
 @section('sidebar-tools')
-@if (Auth::user()->role==1)
+@if (Auth::user()->role=='penyedia')
   <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
 @else
   <li><a class="" href="#">My Transaction</a></li>
 @endif
 @endsection
 @section ('header-content')
-<h1>LIST OF HOTELS</h1>
+@if (Auth::user()->role=='penyedia')
+<h1>LIST OF YOUR HOTELS</h1>
+@else
+<h1>LIST OF AVAILABLE HOTELS</h1>
+@endif
 @endsection
 
 @section('content')
@@ -23,7 +27,7 @@
           
         
     <div class="col">
-      <article class="article article-style-c"  style="width: 20rem;"  style="height: 15rem;"> 
+      <article class="article article-style-c"> 
         <div class="article-header">
           <div class="article-image" data-background="{{$item->gambar_hotel}}" style="background-image: url(&quot;{{$item->gambar_hotel}}&quot;);">
           </div>
@@ -41,7 +45,7 @@
             <div class="text-job"><h4>${{$item->harga}}</h4></div>
             <div class="d-flex justify-content-between">
             
-              @if (Auth::user()->role==1)
+              @if (Auth::user()->role=='penyedia')
               <a type="submit" href="{{route('hotel.edit', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Edit</a>
               <a type="submit" href="{{route('hotel.show', ['hotel'=>$item->id])}}" class="btn btn-primary btn-sm">Show</a>
               @else

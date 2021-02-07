@@ -21,8 +21,15 @@ class HotelController extends Controller
     }
 
     public function index()
-    {
-        $hotel = Hotel::all();
+    { $user = Auth::user();
+        if ($user->role=='penyedia') {
+       
+        $hotel = $user->hotel;
+        }
+        else {
+            $hotel = Hotel::all();
+        }
+        
         
         return view('projek_akhir.crud_hotel.index', compact('hotel'));
     }
@@ -46,13 +53,24 @@ class HotelController extends Controller
     public function store(Request $request)
     {
         
+
+        $request->validate([
+            'nama_hotel' => 'required',
+            'kategori' => 'required',
+            'deskripsi' => 'required',
+            'gambar_hotel' => 'required',
+            'alamat' => 'required',
+            'harga' => 'required'
+        ]);
+        
         $hotel = Hotel::create([
             "nama_hotel" => $request["nama_hotel"],
             "kategori" => $request["kategori"],
             "deskripsi" => $request["deskripsi"],
             "gambar_hotel" => $request["gambar_hotel"],
             "alamat" => $request["alamat"],
-            "harga" => $request["harga"]
+            "harga" => $request["harga"],
+            "user_id" => Auth::id()
         ]);
         // $user = Auth::user();
         // $user->hotels()->save($hotel);
@@ -86,6 +104,7 @@ class HotelController extends Controller
      */
     public function edit($id)
     {
+        
         $hotel = Hotel::find($id);
         return view('projek_akhir.crud_hotel.edit', compact('hotel'));
     }
@@ -99,6 +118,14 @@ class HotelController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nama_hotel' => 'required',
+            'kategori' => 'required',
+            'deskripsi' => 'required',
+            'gambar_hotel' => 'required',
+            'alamat' => 'required',
+            'harga' => 'required'
+        ]);
        
         $profile=Hotel::where('id',$id)->update([
             "nama_hotel" => $request["nama_hotel"],
@@ -121,6 +148,7 @@ class HotelController extends Controller
     public function destroy($id)
     {
         hotel::destroy($id);
+        Alert::success('Berhasil', 'Berhasil dihapus');
         return redirect('../../hotel');
     }
 }

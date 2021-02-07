@@ -21,7 +21,7 @@
 <!-- JS Libraies -->
 <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
 <script src="../node_modules/selectric/public/jquery.selectric.min.js"></script>
-<script src="../node_modules/jquery_upload_preview/assets/js/jquery.uploadPreview.min.js"></script>
+<script src="jquery.uploadPreview.min.js"></script>
 <script src="../node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 
 <!-- Template JS File -->
@@ -34,13 +34,16 @@
 <link rel="stylesheet" href="stisla/assets/css/style.css">
 <link rel="stylesheet" href="stisla/assets/css/components.css">
 @section('content')
-<form role="form" action="/hotel" method="POST">
+<form role="form" action="/hotel" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="card-body">
         <div class="form-group row mb-4">
           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Hotel</label>
           <div class="col-sm-12 col-md-7">
             <input type="text" class="form-control" name="nama_hotel">
+            @error('nama_hotel')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
         </div>
         <div class="form-group row mb-4">
@@ -56,33 +59,47 @@
           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
           <div class="col-sm-12 col-md-7">
             <textarea class="summernote-simple" style="margin-top: 0px; margin-bottom: 0px; height: 76px;" name="deskripsi"></textarea>
+            @error('deskripsi')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
         </div>
         <div class="form-group row mb-4">
           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Photo Hotel</label>
           <div class="col-sm-12 col-md-7">
-            <div id="image-preview" class="image-preview">
-              <label for="image-upload" id="image-label">Choose File</label>
+            
+              
               <input type="file" name="gambar_hotel" id="image-upload">
-            </div>
+              @error('gambar_hotel')
+                  <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+            
+           
+            
           </div>
         </div>
         <div class="form-group row mb-4">
             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Alamat</label>
             <div class="col-sm-12 col-md-7">
               <input type="text" class="form-control inputtags" name="alamat">
+              @error('alamat')
+                  <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
           </div>
           <div class="form-group row mb-4">
             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga/malam</label>
             <div class="col-sm-12 col-md-7">
               <input type="text" class="form-control inputtags" name="harga">
+              @error('harga')
+                  <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
           </div>
         <div class="form-group row mb-4">
           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
           <div class="col-sm-12 col-md-7">
-            <button type="submit" class="btn btn-primary">Create Hotel</button>
+            <button type="submit" value="upload" class="btn btn-primary">Create Hotel</button>
           </div>
         </div>
       </div>

@@ -5,13 +5,14 @@
 @endpush
 
 @section('sidebar-tools')
-@if (Auth::user()->role==1)
+@if (Auth::user()->role=='penyedia')
   <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
 @else
   <li><a class="" href="#">My Transaction</a></li>
 @endif
 @endsection
 
+@section('content')
 <form method="POST" action="/profile" role="form" class="needs-validation" novalidate="" onsubmit="myButton.disabled = true; return true;">
     @csrf
     @error('submit')
@@ -27,7 +28,7 @@
                             <label>Real Name</label>
                             <input type="text" class="form-control" value="" name="nama" required="">
                             <div class="invalid-feedback">
-                              Please fill in the first name
+                              Please fill in the your name
                             </div>
                           </div>
                         

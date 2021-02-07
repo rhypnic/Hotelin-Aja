@@ -1,7 +1,7 @@
 @extends('projek_akhir.blank')
 
 @section('sidebar-tools')
-@if (Auth::user()->role==1)
+@if (Auth::user()->role=='penyedia')
   <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
 @else
   <li><a class="" href="#">My Transaction</a></li>
@@ -29,6 +29,7 @@
                   <div >
                     
                     <li>Alamat = {{$hotel->alamat}}</li>
+                    <li>user_id = {{$hotel->penyedia->id}}</li>
                     </ul>
                   </div>
               <form action="/hotel/{{$hotel->id}}" method="post" class=text-right>
