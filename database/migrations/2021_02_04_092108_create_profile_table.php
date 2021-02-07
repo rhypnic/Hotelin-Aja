@@ -22,7 +22,7 @@ class CreateProfileTable extends Migration
             $table->string('phone_number');
             $table->foreign('user_id')->references('id')->on ('users');
             $table->string('deskripsi');
-            $table->enum('role',['Penginap','Penyedia']);
+            
             $table->timestamps();
         });
     }

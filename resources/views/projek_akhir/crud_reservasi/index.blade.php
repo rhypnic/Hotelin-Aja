@@ -74,9 +74,28 @@
                                             <td>{{$item ->tggl_checkin}}</td>
                                             <td>{{$item ->tggl_checkout}}</td>
                                             <td>
+                                                @if ($item->status == "Belum Checkin") 
+                                                <div class="badge badge-info">{{$item ->status}}</div>
+                                                @endif
+                                                @if ($item->status == "Checked In") 
                                                 <div class="badge badge-success">{{$item ->status}}</div>
+                                                @endif
+                                                @if ($item->status == "Checked Out") 
+                                                <div class="badge badge-secondary">{{$item ->status}}</div>
+                                                @endif
+                                                @if ($item->status == "Cancelled") 
+                                                <div class="badge badge-danger">{{$item ->status}}</div>
+                                                @endif
+                                                
                                             </td>
-                                            <td><a href="{{route('reservasi.show', ['reservasi'=>$item->id])}}" class="btn btn-secondary">Detail</a></td>
+                                            <td>
+                                            <form action="{{route('reservasi.destroy', ['reservasi'=>$item->id])}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{route('reservasi.show', ['reservasi'=>$item->id])}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                                <a href="{{route('reservasi.edit', ['reservasi'=>$item->id])}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
+                                                <button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+                                            </form>
                                         </tr>
                                         @endforeach  
                                     </tbody>

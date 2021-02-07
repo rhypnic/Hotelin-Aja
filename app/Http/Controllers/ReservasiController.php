@@ -88,7 +88,8 @@ class ReservasiController extends Controller
      */
     public function edit($id)
     {
-        return view('projek_akhir.crud_reservasi.edit');
+        $reservasi = Reservasi::findorfail($id);
+        return view('projek_akhir.crud_reservasi.edit', compact('reservasi'));
     }
 
     /**
@@ -100,7 +101,31 @@ class ReservasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request->tggl_checkout);
+        $this->validate($request, [
+            'nama_penyewa'=> 'required',
+            'type_kamar'=> 'required',
+            'tggl_checkin'=> 'required',
+            'tggl_checkout'=> 'required',
+            'tggl_checkout'=> 'required',
+            'status' => 'required'
+            ]
+        );
+
+        $reservasi_data = [
+            "profile_id"=> $request["nama_penyewa"],
+            "kamar_id" => $request["type_kamar"],
+            "tggl_checkin"=> $request["tggl_checkin"],
+            "tggl_checkout"=> $request["tggl_checkout"],
+            "tggl_checkout"=> $request["tggl_checkout"],
+            "status" => $request["status"]
+        ];
+
+        Reservasi::whereId($id)->update($reservasi_data);
+
+        Alert::success('Selamat!', 'Reservasi berhasil diubah');
+
+        return redirect('/reservasi');
     }
 
     /**
@@ -111,6 +136,8 @@ class ReservasiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reservasi::destroy($id);
+        Alert::success('Selamat!', 'Reservasi berhasil dihapus');
+        return redirect('/reservasi');
     }
 }

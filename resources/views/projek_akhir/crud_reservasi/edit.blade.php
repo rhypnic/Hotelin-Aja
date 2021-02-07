@@ -21,14 +21,20 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h4>Tambah Data Reservasi</h4>
+          <h4>Ubah Data Reservasi</h4>
         </div>
         <div class="card-body">
-          <form action="{{route('reservasi.update')}}" method="post">
+          @if (count($errors) > 0)
+          @foreach ($errors->all() as $error)
+            <div class="alert alert-danger" role="alert">{{$error}}</div>
+          @endforeach
+          @endif
+          <form action="{{route('reservasi.update', $reservasi->id)}}" method="post">
             @csrf
+            @method('patch')
               <div class="form-group">
                   <label>Nama Penyewa</label>
-                  <input type="text" class="form-control" name="nama_penyewa">
+                  <input type="text" class="form-control" name="nama_penyewa" value="{{$reservasi->profile_id}}">
               </div>
               <div class="form-group">
                   <label>Nama Hotel</label>
@@ -36,19 +42,28 @@
               </div>
               <div class="form-group">
                   <label>Type Kamar</label>
-                  <input type="text" class="form-control" name="type-kamar">
+                  <input type="text" class="form-control" name="type-kamar" value="{{$reservasi->kamar_id}}">
               </div>
               <div class="form-group">
                 <label>Tanggal Checkin</label>
-                <input type="text" class="form-control datetimepicker" name="tggl_checkin">
+                <input type="text" class="form-control datetimepicker" name="tggl_checkin" value="{{$reservasi->tggl_checkin}}">
               </div>
               <div class="form-group">
                 <label>Tanggal Checkout</label>
-                <input type="text" class="form-control datetimepicker" name="tggl_checkout">
+                <input type="text" class="form-control datetimepicker" name="tggl_checkout" value="{{$reservasi->tggl_checkout}}">
               </div>
-              <input type="hidden" name="status" value="Belum Checkin">
               <div class="form-group">
-                <button class="btn btn-primary btn-md btn-block">Tambahkan Data Reservasi</button>
+                <label>Tanggal Checkout</label>
+                <select class="form-control">
+                  <option selected value="{{$reservasi->status}}">{{$reservasi->status}} (Status Sebelumnya)</option>
+                  <option value="Belum Checkin">Belum Checkin</option>
+                  <option value="Checked In">Checked In</option>
+                  <option value="Checked Out">Checked Out</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-md btn-block">Update Data Reservasi</button>
               </div>
           </form>
         </div>

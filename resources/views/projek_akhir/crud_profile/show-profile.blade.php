@@ -5,13 +5,11 @@
 @endsection
 
 @section('sidebar-tools')
-@if (strcmp($roleku,$role2)==0)
-    <li><a class="../../hotelin" href="hotel/create">Create Hotel</a></li>
+@if (Auth::user()->role==1)
+  <li><a class="hotelin" href="hotel/create">Register Hotel</a></li>
 @else
-    <li><a class="../../hotelin" href="hotel/create">My Transaction</a></li>
+  <li><a class="" href="#">My Transaction</a></li>
 @endif
-    
-    
 @endsection
 
 @section('content')
@@ -37,7 +35,12 @@
         <div class="profile-widget-items">
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">Role</div>
-            <div class="profile-widget-item-value">{{Auth::user()->role}}</div>
+            <div class="profile-widget-item-value">
+              @if (Auth::user()->role==1)
+              Penyedia
+            @else
+              Penginap
+            @endif</div>
           </div>
           <div class="profile-widget-item">
             <div class="profile-widget-item-label">id</div>
